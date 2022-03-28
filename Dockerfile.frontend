@@ -1,0 +1,28 @@
+FROM node:12.22-alpine
+
+# install simple http server for serving static content
+RUN apk add --update --no-cache curl py-pip
+# RUN apk --no-cache add --virtual builds-deps build-base python
+RUN npm install -g http-server && npm install -g node-gyp
+
+# make the 'app' folder the current working directory
+WORKDIR /mottotravel/frontend
+
+# copy both 'package.json' and 'package-lock.json' (if available)
+COPY ./frontend/package*.json ./
+COPY ./frontend/vue.config.js ./
+
+# install project dependencies
+RUN npm install
+
+# copy project files and folders to the current working directory (i.e. 'app' folder)
+# COPY . .
+
+# build app for production with minification
+#RUN npm run build
+
+CMD npm run serve
+
+EXPOSE 8089
+# CMD [ "http-server", "dist" ]
+

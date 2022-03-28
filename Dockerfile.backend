@@ -1,0 +1,13 @@
+# 가져올 이미지 설정
+FROM openjdk:8-jdk-alpine
+
+RUN apk update
+RUN echo 'Townjob Backend'
+
+#ENV CLASSPATH /townjob/backend/classes:/townjob/backend/backend-1.0.0-SNAPSHOT.jar:$CLASSPATH
+
+WORKDIR /townjob/backend
+# COPY ./backend/target/backend-1.0.0-SNAPSHOT.jar ./backend-1.0.0-SNAPSHOT.jar
+
+EXPOSE 8088
+ENTRYPOINT ["java", "-Dspring.profiles.active=docker","-jar", "backend-1.0.0-SNAPSHOT.jar"]
