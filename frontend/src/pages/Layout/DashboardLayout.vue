@@ -11,6 +11,10 @@
         <md-icon>home</md-icon>
         <p>Home</p>
       </sidebar-link>
+      <sidebar-link to="/course">
+        <md-icon>location_on</md-icon>
+        <p>Travel Course</p>
+      </sidebar-link>
       <sidebar-link to="/dashboard">
         <md-icon>dashboard</md-icon>
         <p>Dashboard</p>

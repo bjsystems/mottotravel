@@ -1,6 +1,7 @@
 import DashboardLayout from "@/pages/Layout/DashboardLayout.vue";
 
 import Home from "@/pages/Home.vue";
+import TravelCourse from "@/pages/TravelCourse.vue";
 import Dashboard from "@/pages/Dashboard.vue";
 import UserProfile from "@/pages/UserProfile.vue";
 import TableList from "@/pages/TableList.vue";
@@ -20,6 +21,11 @@ const routes = [
         path: "home",
         name: "Home",
         component: Home,
+      },
+      {
+        path: "course",
+        name: "TravelCourse",
+        component: TravelCourse,
       },
       {
         path: "dashboard",
