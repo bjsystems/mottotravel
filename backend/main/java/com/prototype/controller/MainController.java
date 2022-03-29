@@ -12,8 +12,6 @@ public class MainController {
     @CrossOrigin(origins="*")
     @GetMapping("/test")
     public void ex1() {
-        System.out.println("테스트");
-        System.out.println("테스트");
-        System.out.println("테스트");
+        System.out.println("컨트롤러 테스트");
     }
 }
