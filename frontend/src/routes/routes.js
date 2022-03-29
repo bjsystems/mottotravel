@@ -1,5 +1,6 @@
 import DashboardLayout from "@/pages/Layout/DashboardLayout.vue";
 
+import Home from "@/pages/Home.vue";
 import Dashboard from "@/pages/Dashboard.vue";
 import UserProfile from "@/pages/UserProfile.vue";
 import TableList from "@/pages/TableList.vue";
@@ -13,8 +14,13 @@ const routes = [
   {
     path: "/",
     component: DashboardLayout,
-    redirect: "/dashboard",
+    redirect: "/home",
     children: [
+      {
+        path: "home",
+        name: "Home",
+        component: Home,
+      },
       {
         path: "dashboard",
         name: "Dashboard",
